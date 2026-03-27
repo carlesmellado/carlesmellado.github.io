@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#2dd4bf" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="50" fill="url(#bgGradient)" />
+  
+  <!-- Stylized person/hacker outline -->
+  <path d="M50 25a15 15 0 1 0 0 30 15 15 0 0 0 0-30zm0 35c-15 0-30 10-30 25v5h60v-5c0-15-15-25-30-25z" fill="#ffffff" opacity="0.9" />
+  
+  <!-- Small drone/tech icon inside mind/head as playful touch -->
+  <circle cx="50" cy="35" r="4" fill="#0f172a" opacity="0.5" />
+</svg>

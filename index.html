@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Personal</title>
+    <!-- Fonts: Inter i Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="glass-header">
+        <div class="header-content container">
+            <div class="logo">
+                <img src="assets/avatar.svg" alt="Avatar" class="avatar">
+                <span class="logo-text">El meu Portfoli</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">Sobre mi</a>
+                <a href="#hobbies">Aficions</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Secció Hero: Presentació inicial -->
+        <section class="hero container">
+            <div class="hero-content fade-in-up">
+                <div class="hero-avatar">
+                    <img src="assets/avatar.svg" alt="El meu Avatar principal">
+                </div>
+                <h1 class="title">Hola! Sóc <span>Informàtic</span></h1>
+                <p class="subtitle">De professió i passió. Benvinguts al meu espai personal.</p>
+                <a href="#hobbies" class="btn-primary">Descobreix les meves aficions ↓</a>
+            </div>
+        </section>
+
+        <!-- Secció Sobre mi -->
+        <section id="about" class="about container split-section">
+            <div class="text-block fade-in-up">
+                <h2>Qui sóc?</h2>
+                <p>Sóc de Girona, i un apassionat de la tecnologia i la informàtica. Gaudeixo resolent problemes, optimitzant sistemes i creant solucions digitals. La meva professió m'ha portat a explorar múltiples àmbits del desenvolupament i la coordinació TIC.</p>
+                <p>Però la vida no és només estar davant d'una pantalla. Lluny del codi, busco l'aire lliure i l'adrenalina.</p>
+            </div>
+            <!-- Pot anar algun gràfic, silueta o imatge representativa aquí -->
+        </section>
+
+        <!-- Secció Aficions -->
+        <section id="hobbies" class="hobbies container">
+            <h2 class="section-title fade-in-up">Les meves aficions</h2>
+            <div class="hobbies-grid">
+                
+                <!-- Moto / Bici -->
+                <div class="hobby-card hidden">
+                    <div class="hobby-icon">🏍️</div>
+                    <h3>Dues Rodes</h3>
+                    <p>La sensació de llibertat sobre dues rodes. Ja sigui descobrint noves rutes amb moto o pedalant per la natura.</p>
+                </div>
+
+                <!-- Viatges -->
+                <div class="hobby-card hidden delay-1">
+                    <div class="hobby-icon">✈️</div>
+                    <h3>Viatges</h3>
+                    <p>M'encanta explorar nous llocs, conèixer diferents cultures i col·leccionar experiències arreu del món.</p>
+                </div>
+
+                <!-- Drons -->
+                <div class="hobby-card hidden delay-2">
+                    <div class="hobby-icon">🚁</div>
+                    <h3>Drons</h3>
+                    <p>Pilotar i capturar el món des de l'aire. La fotografia aèria i la tecnologia que hi ha al darrere em fascinen.</p>
+                </div>
+                
+                <!-- Altres -->
+                <div class="hobby-card hidden delay-3">
+                    <div class="hobby-icon">⚡</div>
+                    <h3>I molt més...</h3>
+                    <p>Sempre buscant el proper repte personal o professional. L'aprenentatge continu és el meu motor.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Espai buit per provar bé l'scroll -->
+        <div class="spacer"></div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 - Web Personal Escrita amb Passió.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
