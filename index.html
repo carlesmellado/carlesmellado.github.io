@@ -7,7 +7,7 @@
     <!-- Fonts: Inter i Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +21,7 @@
             <nav class="nav-links">
                 <a href="#about">Sobre mi</a>
                 <a href="#hobbies">Aficions</a>
+                <a href="#contact">Contacte</a>
             </nav>
         </div>
     </header>
@@ -48,38 +49,90 @@
             <!-- Pot anar algun gràfic, silueta o imatge representativa aquí -->
         </section>
 
+        <!-- Secció VoraData (Featured Project) -->
+        <section id="voradata" class="container voradata-section">
+            <div class="voradata-card hidden">
+                <div class="vd-header">
+                    <span class="vd-badge">Soci Fundador</span>
+                </div>
+                <div class="vd-content">
+                    <h2 class="vd-title">&lt;VoraData/&gt;</h2>
+                    <h3 class="vd-subtitle">IA i Codi al servei de la Indústria</h3>
+                    <p class="vd-desc">
+                        Agència de desenvolupament focalitzada en integrar intel·ligència artificial i codi a mida. Optimitzem processos, automatitzem fluxos de treball i dissenyem gestors avançats basats en noves tecnologies per impulsar el futur digital de les empreses.
+                    </p>
+                    <div class="vd-footer">
+                        <div class="vd-status">
+                            <span class="pulse-dot"></span> Web en construcció...
+                        </div>
+                    </div>
+                </div>
+                <!-- Elements gràfics decoratius tech -->
+                <div class="vd-glow orb-1"></div>
+                <div class="vd-glow orb-2"></div>
+            </div>
+        </section>
+
         <!-- Secció Aficions -->
         <section id="hobbies" class="hobbies container">
             <h2 class="section-title fade-in-up">Les meves aficions</h2>
-            <div class="hobbies-grid">
+            <div class="hobbies-list">
                 
                 <!-- Moto / Bici -->
-                <div class="hobby-card hidden">
-                    <div class="hobby-icon">🏍️</div>
-                    <h3>Dues Rodes</h3>
-                    <p>La sensació de llibertat sobre dues rodes. Ja sigui descobrint noves rutes amb moto o pedalant per la natura.</p>
-                </div>
+                <a href="aficions/dues-rodes/" class="hobby-row hidden">
+                    <div class="row-header">
+                        <span class="row-number">01</span>
+                        <h3>Dues Rodes</h3>
+                        <div class="row-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"/></svg>
+                        </div>
+                    </div>
+                    <div class="row-content">
+                        <p>La sensació de llibertat sobre dues rodes. Ja sigui descobrint noves rutes amb moto o pedalant per la natura.</p>
+                    </div>
+                </a>
 
                 <!-- Viatges -->
-                <div class="hobby-card hidden delay-1">
-                    <div class="hobby-icon">✈️</div>
-                    <h3>Viatges</h3>
-                    <p>M'encanta explorar nous llocs, conèixer diferents cultures i col·leccionar experiències arreu del món.</p>
-                </div>
+                <a href="aficions/viatges/" class="hobby-row hidden delay-1">
+                    <div class="row-header">
+                        <span class="row-number">02</span>
+                        <h3>Viatges</h3>
+                        <div class="row-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 4-3.5 3.5L3 15l-1 1 4 2 2 4 1-1-1.5-2.5L12 15l4 6 1.2-.7c.4-.2.7-.6.6-1.1z"/></svg>
+                        </div>
+                    </div>
+                    <div class="row-content">
+                        <p>M'encanta explorar nous llocs, conèixer diferents cultures i col·leccionar experiències arreu del món.</p>
+                    </div>
+                </a>
 
                 <!-- Drons -->
-                <div class="hobby-card hidden delay-2">
-                    <div class="hobby-icon">🚁</div>
-                    <h3>Drons</h3>
-                    <p>Pilotar i capturar el món des de l'aire. La fotografia aèria i la tecnologia que hi ha al darrere em fascinen.</p>
-                </div>
+                <a href="aficions/drons/" class="hobby-row hidden delay-2">
+                    <div class="row-header">
+                        <span class="row-number">03</span>
+                        <h3>Drons</h3>
+                        <div class="row-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="4" height="4" rx="1"/><path d="M14 10l3-3m-10 3l-3-3m10 7l3 3m-10-3l-3 3"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="6" cy="18" r="2"/></svg>
+                        </div>
+                    </div>
+                    <div class="row-content">
+                        <p>Pilotar i capturar el món des de l'aire. La fotografia aèria i la tecnologia que hi ha al darrere em fascinen.</p>
+                    </div>
+                </a>
                 
                 <!-- Altres -->
-                <div class="hobby-card hidden delay-3">
-                    <div class="hobby-icon">⚡</div>
-                    <h3>I molt més...</h3>
-                    <p>Sempre buscant el proper repte personal o professional. L'aprenentatge continu és el meu motor.</p>
-                </div>
+                <a href="aficions/molt-mes/" class="hobby-row hidden delay-3">
+                    <div class="row-header">
+                        <span class="row-number">04</span>
+                        <h3>I molt més...</h3>
+                        <div class="row-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                    </div>
+                    <div class="row-content">
+                        <p>Sempre buscant el proper repte personal o professional. L'aprenentatge continu és el meu motor.</p>
+                    </div>
+                </a>
 
             </div>
         </section>
@@ -87,6 +140,23 @@
         <!-- Espai buit per provar bé l'scroll -->
         <div class="spacer"></div>
     </main>
+
+    <section id="contact" class="container contact-section hidden">
+        <h2>Connectem?</h2>
+        <p class="contact-desc">Si vols xerrar sobre tecnologia, drons o rutes en moto, em trobaràs aquí:</p>
+        <div class="social-links">
+            <a href="https://github.com/carlesmellado" target="_blank" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/carles-mellado-bosch-56979298/" target="_blank" class="social-icon" aria-label="LinkedIn Principal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <!-- Perfil de Docent -->
+            <a href="https://cmelladobosch.github.io/" target="_blank" class="social-icon" aria-label="Perfil Docent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a2 2 0 0 0-.019-3.838L12.83 4.34a2 2 0 0 0-1.66 0L2.6 7.08a2 2 0 0 0 0 3.832l8.57 3.698a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+            </a>
+        </div>
+    </section>
 
     <footer>
         <div class="container footer-content">
