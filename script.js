@@ -129,12 +129,17 @@ window.addEventListener('scroll', () => {
    Galeria i Lightbox Automàtic
    ======================= */
 
+let currentLightboxData = [];
+let currentLightboxIndex = 0;
+
 // Injecció de l'HTML del Lightbox de forma global al BODY
 document.addEventListener("DOMContentLoaded", () => {
     if (!document.getElementById("lightbox")) {
         const lightboxHtml = `
             <div id="lightbox" class="lightbox" onclick="closeLightbox()">
                 <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+                <button class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1, event)">&#10094;</button>
+                <button class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1, event)">&#10095;</button>
                 <img id="lightbox-img" class="lightbox-content" src="" alt="Ampliació" onclick="event.stopPropagation()">
                 <div id="lightbox-caption" class="lightbox-caption"></div>
             </div>
@@ -143,15 +148,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function openLightbox(imageSrc, captionText) {
-    const lightbox = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    const caption = document.getElementById('lightbox-caption');
+// Suport per navegació de teclat
+document.addEventListener('keydown', (e) => {
+    if (document.body.classList.contains('lightbox-open')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+        if (e.key === 'ArrowRight') changeLightboxImage(1);
+    }
+});
+
+function openLightbox(index) {
+    if (!currentLightboxData || currentLightboxData.length === 0) return;
+    currentLightboxIndex = index;
+    updateLightboxView();
     
-    img.src = imageSrc;
-    caption.textContent = captionText;
-    
-    lightbox.classList.add('active');
+    document.getElementById('lightbox').classList.add('active');
     document.body.classList.add('lightbox-open');
 }
 
@@ -161,14 +172,37 @@ function closeLightbox() {
     document.body.classList.remove('lightbox-open');
 }
 
+function changeLightboxImage(direction, event) {
+    if (event) event.stopPropagation(); // Evitar que el clic tanqui la modal (fons)
+    if (!currentLightboxData || currentLightboxData.length === 0) return;
+    
+    currentLightboxIndex += direction;
+    
+    // Circular bounds
+    if (currentLightboxIndex < 0) currentLightboxIndex = currentLightboxData.length - 1;
+    if (currentLightboxIndex >= currentLightboxData.length) currentLightboxIndex = 0;
+    
+    updateLightboxView();
+}
+
+function updateLightboxView() {
+    const img = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+    const item = currentLightboxData[currentLightboxIndex];
+    
+    img.src = item.src;
+    caption.textContent = item.caption;
+}
+
 // Generador de Galeria a partir de JSON/Array
 function renderGallery(imagesArray, basePath, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
     
     container.innerHTML = ""; // Esborra placeholders
+    currentLightboxData = []; // Buidem memòria per la nova galeria local
     
-    imagesArray.forEach((filename) => {
+    imagesArray.forEach((filename, index) => {
         // Ex: Moto_Pirineus_2010.png -> parts: [Moto, Pirineus, 2010]
         const noExt = filename.split('.').slice(0, -1).join('.'); // Treu l'extensió (.png/.jpg)
         const parts = noExt.split('_'); 
@@ -184,6 +218,9 @@ function renderGallery(imagesArray, basePath, containerId) {
         
         const imgSrc = basePath + filename;
         
+        // Alimentem la xarxa global pel visor
+        currentLightboxData.push({ src: imgSrc, caption: friendlyCaption });
+        
         // Creem la targeta Flotant
         const photoDiv = document.createElement("div");
         photoDiv.className = "floating-photo";
@@ -192,7 +229,8 @@ function renderGallery(imagesArray, basePath, containerId) {
         const randomDegree = (Math.random() * 8 - 4).toFixed(2);
         photoDiv.style.setProperty('--random-rotation', `${randomDegree}deg`);
         
-        photoDiv.onclick = () => openLightbox(imgSrc, friendlyCaption);
+        // Quan facin clic passem només el seu index, ell sabrà de on treure la ruta des de l'array global
+        photoDiv.onclick = () => openLightbox(index);
         
         photoDiv.innerHTML = `
             <img src="${imgSrc}" alt="${friendlyCaption}">

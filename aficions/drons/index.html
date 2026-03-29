@@ -28,25 +28,14 @@
             <h1>Drons i Imatge Aèria.</h1>
             <div class="hobby-content" style="max-width: 800px;">
                 <p>Veure les coses des d'una perspectiva a vista d'ocell canvia per complet la concepció dels espais. Els drons combinen les meves ganes de modelisme amb la fotografia avançada i el repte de pilotar al mil·límetre.</p>
-                <p>Gravo preses aèries que després utilitzo per donar perspectiva als meus viatges i projectes audiovisuals.</p>
+                <p><strong>Pilot oficial Operador de Drons</strong>: Totes les següents imatges aèries han estat capturades i enregistrades sota estrica legalitat després d'haver superat els exàmens i obtenir el meu títol oficial de categoria oberta (Nivell 1) segons la normativa de seguretat aeronàutica UAS vigent de l'AESA i EASA.</p>
             </div>
         </section>
 
         <section class="container" style="padding-bottom: 6rem;">
             <h2>Enregistraments a vista d'Ocell</h2>
-            <div class="photo-gallery fade-in-up" style="animation-delay: 0.2s;">
-                <div class="floating-photo">
-                    <img src="../../assets/img/placeholder.jpg" alt="Drone Costa" style="background:#cbd5e1; height: 180px;">
-                    <span class="photo-caption">Vol litoral</span>
-                </div>
-                <div class="floating-photo">
-                    <img src="../../assets/img/placeholder.jpg" alt="Muntanya" style="background:#94a3b8; height: 180px;">
-                    <span class="photo-caption">Cinemàtica Pyrenees</span>
-                </div>
-                <div class="floating-photo">
-                    <img src="../../assets/img/placeholder.jpg" alt="Pilotant" style="background:#cbd5e1; height: 180px;">
-                    <span class="photo-caption">Setup de vol</span>
-                </div>
+            <div id="gallery-container" class="photo-gallery fade-in-up" style="animation-delay: 0.2s;">
+                <!-- Les fotos aèries s'injecten programàticament des de l'array JS del final -->
             </div>
         </section>
     </main>
@@ -58,5 +47,29 @@
     </footer>
 
     <script src="../../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fotosDrons = [
+                "DroneDJI.jpeg",
+                "EscociaHighLands.jpeg",
+                "EscociaPlatges.jpeg",
+                "FinlandiaLlacs.jpeg",
+                "IslandaColadesLava.jpeg",
+                "IslandaFrontMar.jpeg",
+                "IslandiaCreuarRius.jpeg",
+                "IslandiaGlacera.jpeg",
+                "IslandiaSaltsAigua.jpeg",
+                "NoruegaCamperVan.jpeg",
+                "NoruegaCapNord.jpeg",
+                "NoruegaLofoten.jpeg",
+                "NoruegaRutaMar.jpeg",
+                "NoruegaRutaPonts.jpeg",
+                "SueciaLlacs.jpeg"
+            ];
+            
+            // Renderitzar a la zona del contenidor apuntant a la carpeta drons
+            renderGallery(fotosDrons, "../../assets/img/drons/", "gallery-container");
+        });
+    </script>
 </body>
 </html>

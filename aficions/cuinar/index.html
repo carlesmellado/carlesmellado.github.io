@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuinar - Carles Mellado</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+    
+    <header>
+        <div class="container header-content" style="padding-top: 30px; justify-content: flex-start; height: auto;">
+            <a href="../../index.html#hobbies" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                Tornar al Portfoli
+            </a>
+        </div>
+    </header>
+
+    <main style="flex: 1;">
+        <section class="hobby-hero container fade-in-up">
+            <svg class="huge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                <path d="M7 2v20"/>
+                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+            </svg>
+            <span style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent); font-weight: 600;">04</span>
+            <h1>Gastronomia Culinària.</h1>
+            <div class="hobby-content" style="max-width: 800px;">
+                <p>Més que una necessitat, entenc la cuina com un autèntic laboratori d'idees on experimentar, crear i mimar cada detall. Els plats que preparo traspuen la riquesa del producte de proximitat, combinats amb el meu estil perfeccionista.</p>
+                <p>Reinventant les tradicions: el segell inconfusible de la nostra essència catalana de fons de fogons.</p>
+                <p>La idea és si t'agrada el menjar, fer-ho un mateix, permet gaudir-ne del moment de la preparació i del resultat obtingut!</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2>Les Meves Elaboracions</h2>
+            <div id="gallery-container" class="photo-gallery fade-in-up" style="animation-delay: 0.2s;">
+                <!-- Les fotos s'injecten amb Javascript d'acord al nom del fitxer -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 - Carles Mellado. Creat amb passió.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Afegeix els teus noms de fotografies d'aliments de la carpeta /assets/img/cuinar/ (ex: "Plat_Paella_202X.jpg")
+            const fotosCuinar = [
+                "ArrosBacallà.jpeg",
+                "ArrosNegre.jpeg",
+                "ArrosPeix.jpeg",
+                "ArrosSec.jpeg",
+                "Bacallà.jpeg",
+                "BarbacoaCarn.jpeg",
+                "CalamarsCeba.jpeg",
+                "Calçots.jpeg",
+                "Canapés.jpeg",
+                "CassoletaPatates.jpeg",
+                "CostellóPorc.jpeg",
+                "CremaCatalana.jpeg",
+                "CuixaXai.jpeg",
+                "DoradesForn.jpeg",
+                "EnPreparació.jpeg",
+                "EntrecotBrasa.jpeg",
+                "EspaguetisBroquil.jpeg",
+                "Esqueixada.jpeg",
+                "FavesCatalana.jpeg",
+                "FideusNegres.jpeg",
+                "Fundue.jpeg",
+                "GaltaPorc.jpeg",
+                "Gaspatxo.jpeg",
+                "MelosVedella.jpeg",
+                "MesCanapes.jpeg",
+                "PaellaArros.jpeg",
+                "PaellaArrosBarbacoa.jpeg",
+                "PaellaArrosCalamars.jpeg",
+                "PaellaArrosConill.jpeg",
+                "PaellaMarisc.jpeg",
+                "PaellaMariscBrassa.jpeg",
+                "PeixForn.jpeg",
+                "PesolsCalamar.jpeg",
+                "PesolsMandonguilles.jpeg",
+                "PizzaGambes.jpeg",
+                "PizzaXampinyons.jpeg",
+                "PollastreRostit.jpeg",
+                "PollastrePrunes.jpeg",
+                "PopetsCeba.jpeg",
+                "PostreIogurt.jpeg",
+                "Tallarines.jpeg",
+                "Quiche.jpeg",
+                "RapPatates.jpeg",
+                "SipiaPesols.jpeg",
+                "SuquetPeix.jpeg",
+                "TimbalVerdures.jpeg",
+                "Tonyina.jpeg",
+                "XaiForn.jpeg",
+                "XaiFornPatates.jpeg",
+                "Xuletó.jpeg"
+            ];
+            
+            renderGallery(fotosCuinar, "../../assets/img/cuinar/", "gallery-container");
+        });
+    </script>
+</body>
+</html>
