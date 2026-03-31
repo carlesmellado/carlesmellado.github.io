@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viatges - Carles Mellado</title>
+    <title>I Girona més - Carles Mellado</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,17 +23,21 @@
 
     <main style="flex: 1;">
         <section class="hobby-hero container fade-in-up">
-            <svg class="huge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 4-3.5 3.5L3 15l-1 1 4 2 2 4 1-1-1.5-2.5L12 15l4 6 1.2-.7c.4-.2.7-.6.6-1.1z"/></svg>
-            <span style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent); font-weight: 600;">02</span>
-            <h1>Viatges.</h1>
+            <svg class="huge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent); font-weight: 600;">05</span>
+            <h1>I Girona més.</h1>
             <div class="hobby-content" style="max-width: 800px;">
-                <p>No hi ha res com la sensació d'aterrar a un nou país o planificar la ruta al llarg d'un mapa. Viatjar m'obre la ment i m'apassiona fotografiar el món d'altres cultures i indrets singulars.</p>
-                <p>Una amalgama de cultures, menjars, espais, idiomes i experiències que formen un puzzle personal.</p>
+                <p>Els gironins tenim un lema "I Girona més", sentim orgull de la nostra ciutat i som uns embaixadors allà a on anem pel món...</p>
+                <p>Girona és casa meva, però també és la meva font d'inspiració. Des de les cases de l'Onyar fins als carrerons del Call, cada racó de la ciutat respira història i modernitat a parts iguals.</p>
+                <p>Aquí recullo alguns dels meus moments preferits a la ciutat dels quatre rius.</p>
             </div>
         </section>
 
         <section class="container" style="padding-bottom: 6rem;">
-            <h2>Àlbum de Viatges</h2>
+            <h2>Girona a través dels meus ulls</h2>
             <div id="gallery-container" class="photo-gallery fade-in-up" style="animation-delay: 0.2s;">
                 <!-- Les fotos s'injecten programàticament des de l'array JS del final -->
             </div>
@@ -49,27 +53,14 @@
     <script src="../../script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const fotosViatges = [
-                //2013
-                "França_LaBretanya_2013.jpeg",
-                "França_MontSaintMichel_2013.jpeg",
-                "França_MemorialWWII_2013.jpeg",
-                //2014
-                "Noruega_FiordFLam_2014.jpeg",
-                "Noruega_TeslaModelS_2014.jpeg",
-                //2015
-                "Anglaterra_London_2015.jpeg",
-                //2016
-                "USA_NewYork_2016.jpeg",
-                "USA_Yellowstone_2016.jpeg",
-                "USA_MonumentValley_2016.jpeg",
-                //2017
-                "Alemanya_Neuschwanstein_2017.jpeg",
-                
+            const fotosGirona = [
+                // Afegeix aquí els noms de les teves fotos de Girona a assets/img/girona/
+                "Catedral.jpeg",
+                // "Pont_Onyar_2024.jpeg"
             ];
             
-            // Renderitzar a la zona del contenidor apuntant a la carpeta viatges
-            renderGallery(fotosViatges, "../../assets/img/viatges/", "gallery-container");
+            // Renderitzar a la zona del contenidor apuntant a la carpeta girona
+            renderGallery(fotosGirona, "../../assets/img/girona/", "gallery-container");
         });
     </script>
 </body>

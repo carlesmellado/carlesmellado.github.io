@@ -7,16 +7,13 @@ const observerOptions = {
     threshold: 0.15 // Quan un 15% de la targeta és visible
 };
 
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            // Eliminem classes de delay inicial i ocultació un cop l'animació ha de finalitzar
-            // per assegurar que el Hover (passar el ratolí) no tingui retards
-            setTimeout(() => {
-                entry.target.classList.remove('hidden', 'delay-1', 'delay-2', 'delay-3');
-            }, 1000);
-            observer.unobserve(entry.target); // Deixa d'observar un cop ha aparegut
+        } else {
+            // Permetem que torni a desaparèixer en sortir del focus (scroll up/down)
+            entry.target.classList.remove('show');
         }
     });
 }, observerOptions);

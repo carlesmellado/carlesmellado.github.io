@@ -7,10 +7,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
 </head>
-<body style="min-height: 100vh; display: flex; flex-direction: column;">
+<body class="notebook-body" style="min-height: 100vh; display: flex; flex-direction: column;">
     
     <header>
         <div class="container header-content" style="padding-top: 30px; justify-content: flex-start; height: auto;">
@@ -24,15 +24,82 @@
     <main style="flex: 1;">
         <section class="hobby-hero container fade-in-up">
             <svg class="huge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            <span style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent); font-weight: 600;">04</span>
+            <span style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent); font-weight: 600;">06</span>
             <h1>Curiositat Infinita.</h1>
             <div class="hobby-content" style="max-width: 800px;">
                 <p>Una llista mai és suficient per encabir-hi tots els interessos quan l'aprenentatge és el teu motor de vida. Més enllà de les motos, drons o viatges, estic en contínua recerca de nous reptes tecnològics i personals.</p>
-                <p>I el següent... què serà?</p>
             </div>
         </section>
 
-        <!-- Aquesta no té galeria establerta però queda preparada per si de cas -->
+        <!-- Contenidor de la Llibreta -->
+        <div class="container">
+            <div class="notebook-container fade-in-up" style="animation-delay: 0.3s;">
+                <!-- Anelles superiors fixes -->
+                <div class="notebook-rings"></div>
+                
+                <div class="notebook-content">
+                    <!-- Pàgina 1: Hort Urbà -->
+                    <section class="notebook-page hidden">
+                        <h2 class="handwritten">Hort urbà</h2>
+                        <div class="notebook-entry-content">
+                            <div class="mini-polaroid">
+                                <img src="../../assets/img/mes/HortUrbà.jpeg" alt="El meu hort urbà">
+                            </div>
+                            <div class="notebook-text handwritten">
+                                <p>Observar com creix el planter fins a convertir-se en enciams, tomates i hortalisses genera una curiositat especial per la biologia i els cicles de la natura.</p>
+                                <p>És un laboratori viu a casa, on aprenc sobre la paciència, els regs i la satisfacció d'auto-proveir-se d'aliments frescos i sans.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pàgina 2: Fotografia en Blanc i Negre -->
+                    <section class="notebook-page hidden">
+                        <h2 class="handwritten">Moments en Blanc i Negre</h2>
+                        <div class="notebook-entry-content">
+                            <div class="mini-polaroid" style="transform: rotate(-2deg);">
+                                <img src="../../assets/img/mes/BlanciNegre.jpeg" alt="Fotografia dramàtica">
+                            </div>
+                            <div class="notebook-text handwritten">
+                                <p>Curiositat per captar moments dramàtics i curiosos, amb la càmera, tant del mòbil com de una bona reflex. </p>
+                                <p>L'important és el moment i el lloc i disparar quan l'escena ho demana per immortalitzar la història que s'explica sola.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pàgina 3: Fusionar Fibra Òptica -->
+                    <section class="notebook-page hidden">
+                        <h2 class="handwritten">Fusionar Fibra Òptica</h2>
+                        <div class="notebook-entry-content">
+                            <div class="mini-polaroid" style="transform: rotate(-1.5deg);">
+                                <img src="../../assets/img/mes/FusionarFO.jpeg" alt="Splicing fibra òptica">
+                            </div>
+                            <div class="notebook-text handwritten">
+                                <p>Sempre és un plaer aprendre noves habilitats dins l'àmbit de les xarxes informàtiques. El pas del coure (UTP) a la Fibra Òptica (FO) ha estat tot un repte de precisió.</p>
+                                <p>Aprendre a fusionar FO —una tecnologia totalment diferent a la xarxa tradicional— és d'aquelles experiències que alimenten la curiositat tecnològica al 100%.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    </section>
+
+                    <!-- Pàgina 4: Flexibilitat solar -->
+                    <section class="notebook-page hidden">
+                        <h2 class="handwritten">Flexibilitat solar</h2>
+                        <div class="notebook-entry-content">
+                            <div class="mini-polaroid" style="transform: rotate(1deg);">
+                                <img src="../../assets/img/mes/Flexibilitat.jpeg" alt="Gimnàstica a la posta de sol">
+                            </div>
+                            <div class="notebook-text handwritten">
+                                <p>Captar moments únics en família és la millor recompensa. Veure la flexibilitat i la gràcia d'una sessió de gimnàstica de la meva filla, retallada contra els colors d'una posta de sol, és simplement espectacular.</p>
+                                <p>Fotos que capturen no només una imatge, sinó l'emoció d'un instant irrepetible.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Properes pàgines... -->
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>

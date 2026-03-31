@@ -738,13 +738,14 @@ footer p {
 
 .hidden {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(60px) scale(0.95); /* Més exagerat perquè es noti la sortida de focus */
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
 }
 
 .show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 .delay-1 { transition-delay: 0.1s; }
@@ -802,3 +803,130 @@ footer p {
         font-size: 1rem;
     }
 }
+
+/* =======================
+   Estil Llibreta Simplificada (Notebook)
+   ======================= */
+:root {
+    --paper-bg: #ffffff;
+    --grid-line: #edf2f7;
+    --hole-color: #1a202c;
+}
+
+.notebook-container {
+    max-width: 1000px;
+    margin: 2rem auto 8rem;
+    background: var(--paper-bg);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid #e2e8f0;
+    min-height: 100vh;
+    /* Quadrícula infinita */
+    background-size: 30px 30px;
+    background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+/* Forats a l'esquerra que acompanyen tot el scroll */
+.notebook-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25px;
+    bottom: 0;
+    width: 20px;
+    /* Generem una fila de forats negres que es repeteix verticalment */
+    background-image: radial-gradient(circle, var(--hole-color) 7px, transparent 8px);
+    background-size: 40px 40px;
+    background-position: center;
+    z-index: 5;
+}
+
+/* Marge de seguretat per les anelles */
+.notebook-content {
+    padding-left: 80px; /* Deixem espai perquè els forats no tapin el text */
+}
+
+.notebook-page {
+    padding: 5rem 4rem;
+    min-height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.notebook-page:last-child {
+    border-bottom: none;
+}
+
+.handwritten {
+    font-family: 'Caveat', cursive;
+    color: #2d3748;
+    line-height: 1.5;
+}
+
+.notebook-page h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    transform: rotate(-0.5deg);
+}
+
+.notebook-entry-content {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* Foto Polaroid millorada */
+.mini-polaroid {
+    background: white;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transform: rotate(2deg);
+    flex-shrink: 0;
+    width: 300px;
+    border: 1px solid #f1f5f9;
+}
+
+.mini-polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.notebook-text {
+    font-size: 1.6rem;
+    flex: 1;
+    padding-top: 1rem;
+}
+
+/* Amaguem les anelles antigues si encara quedaven restes */
+.notebook-rings {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .notebook-container::before {
+        left: 10px;
+    }
+    .notebook-content {
+        padding-left: 40px;
+    }
+    .notebook-page {
+        padding: 3rem 1.5rem;
+    }
+    .notebook-entry-content {
+        flex-direction: column;
+    }
+    .mini-polaroid {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
