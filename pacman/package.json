@@ -1,0 +1,17 @@
+{
+  "name": "pac-man",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "100% faithful 1980 Pac-Man arcade replica — HTML5 Canvas + TypeScript",
+  "scripts": {
+    "build": "tsc",
+    "start": "serve -l 8080 .",
+    "typecheck": "tsc --noEmit",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4",
+    "typescript": "^5.5.0"
+  }
+}

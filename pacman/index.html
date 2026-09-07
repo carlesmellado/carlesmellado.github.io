@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pac-Man (1980 Arcade Replica)</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    #game {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      background: #000;
+    }
+    #hint {
+      color: #4a4adf;
+      font: 10px monospace;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game" width="224" height="288"></canvas>
+  <div id="hint">ARROWS / WASD move · SPACE pause · ENTER start</div>
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>
